@@ -18,16 +18,19 @@ textarea {
 }
 
 label {
-    font-weight: bold;
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
 }
 
 input,
 textarea {
     font: inherit;
-    padding: 0.2rem 0.4rem;
+    padding: 0.8rem 1rem;
     width: 100%;
-    max-width: 30rem;
     border: 1px solid #ccc;
+    border-radius: 3px;
+    caret-color: #a80041;
 }
 
 input:focus,
@@ -37,12 +40,14 @@ textarea:focus {
 }
 
 button {
+    margin-top: 20px;
     font: inherit;
     background: #ff0062;
     border: 1px solid #ff0062;
     cursor: pointer;
     color: white;
     padding: 0.75rem 1rem;
+    transition: all 200ms ease-in-out;
 }
 
 button:focus {
@@ -120,8 +125,19 @@ button:active {
 }
 
 #user-input {
+    display: flex;
+    flex-direction: column;
     margin: 1rem;
     padding: 1rem;
     border: 1px solid #ff0062;
     background: #f7f7f7;
+}
+
+#user-input header {
+    background: #ff0062;
+    height: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
 }

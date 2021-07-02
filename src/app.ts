@@ -1,4 +1,4 @@
-//Validation Logic
+//?Validation Logic
 interface Validatable {
     value: string | number;
     required?: boolean;
@@ -11,11 +11,13 @@ interface Validatable {
 function validate(validatableInput: Validatable): boolean {
     let isValid = true;
 
+    // Validate Required
     if (validatableInput.required) {
         isValid =
             isValid && validatableInput.value.toString().trim().length !== 0;
     }
 
+    //Validate Min Length
     if (
         validatableInput.minLength != null &&
         typeof validatableInput.value === "string"
@@ -25,6 +27,7 @@ function validate(validatableInput: Validatable): boolean {
             validatableInput.value.length >= validatableInput.minLength;
     }
 
+    //Validate Max Length
     if (
         validatableInput.maxLength != null &&
         typeof validatableInput.value === "string"
@@ -34,6 +37,7 @@ function validate(validatableInput: Validatable): boolean {
             validatableInput.value.length <= validatableInput.maxLength;
     }
 
+    //Validate Max
     if (
         validatableInput.max != null &&
         typeof validatableInput.value === "number"
@@ -41,6 +45,7 @@ function validate(validatableInput: Validatable): boolean {
         isValid = isValid && validatableInput.value <= validatableInput.max;
     }
 
+    //Validate Min
     if (
         validatableInput.min != null &&
         typeof validatableInput.value === "number"
@@ -51,7 +56,7 @@ function validate(validatableInput: Validatable): boolean {
     return isValid;
 }
 
-//AutoBind Decorator
+//?AutoBind Decorator
 function AutoBind(_target: any, _name: string, descriptor: PropertyDescriptor) {
     const originalMethod = descriptor.value;
     const adjustedDescriptor: PropertyDescriptor = {
@@ -66,8 +71,7 @@ function AutoBind(_target: any, _name: string, descriptor: PropertyDescriptor) {
     return adjustedDescriptor;
 }
 
-// Project List Class
-
+// Project-List Class
 class ProjectList {
     templateEl: HTMLTemplateElement;
     targetEl: HTMLDivElement;
@@ -100,7 +104,7 @@ class ProjectList {
     }
 }
 
-//Project Input Class
+//Project-Input Class
 class ProjectInput {
     templateEl: HTMLTemplateElement;
     targetEl: HTMLDivElement;
