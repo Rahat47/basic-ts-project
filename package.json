@@ -1,0 +1,14 @@
+{
+    "name": "ts-drag-drop-project",
+    "version": "1.0.0",
+    "description": "A drag and drop application with TypeScript. practicing all the basics of TypeScript",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "typescript"
+    ],
+    "author": "Rayhan Rahat",
+    "license": "ISC"
+}
