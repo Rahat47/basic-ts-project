@@ -1,10 +1,13 @@
-import { AutoBind } from "../decorators/autobind";
-import { projectState } from "../state/project-state";
-import { Validatable, validate } from "../utils/validation";
-import { Component } from "./base-component";
+import AutoBind from "../decorators/autobind.js";
+import { projectState } from "../state/project-state.js";
+import * as Validation from "../utils/validation.js";
+import Component from "./base-component.js";
 
 //Project-Input Class
-export class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
+export default class ProjectInput extends Component<
+    HTMLDivElement,
+    HTMLFormElement
+> {
     titleInp: HTMLInputElement;
     descriptionInp: HTMLInputElement;
     peopleInp: HTMLInputElement;
@@ -33,18 +36,18 @@ export class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
         const enteredDesc = this.descriptionInp.value;
         const enteredPeople = this.peopleInp.value;
 
-        const titleValidatable: Validatable = {
+        const titleValidatable: Validation.Validatable = {
             value: enteredTitle,
             required: true,
         };
 
-        const descValidatable: Validatable = {
+        const descValidatable: Validation.Validatable = {
             value: enteredDesc,
             required: true,
             minLength: 5,
         };
 
-        const peopleValidatable: Validatable = {
+        const peopleValidatable: Validation.Validatable = {
             value: +enteredPeople,
             required: true,
             min: 1,
@@ -52,9 +55,9 @@ export class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
         };
 
         if (
-            !validate(titleValidatable) ||
-            !validate(descValidatable) ||
-            !validate(peopleValidatable)
+            !Validation.validate(titleValidatable) ||
+            !Validation.validate(descValidatable) ||
+            !Validation.validate(peopleValidatable)
         ) {
             alert("invalid Input!! Please Try again");
             return;

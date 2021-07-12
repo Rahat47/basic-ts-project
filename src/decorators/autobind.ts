@@ -1,5 +1,5 @@
 //?AutoBind Decorator
-export function AutoBind(
+export default function AutoBind(
     _target: any,
     _name: string,
     descriptor: PropertyDescriptor
