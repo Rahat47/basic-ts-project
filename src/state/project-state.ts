@@ -1,4 +1,4 @@
-import { Project, ProjectType } from "../models/project.js";
+import { Project, ProjectType } from "../models/project";
 
 //Project State Management
 type Listener<T> = (items: T[]) => void;

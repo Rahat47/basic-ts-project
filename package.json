@@ -4,11 +4,20 @@
     "description": "A drag and drop application with TypeScript. practicing all the basics of TypeScript",
     "main": "app.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack"
     },
     "keywords": [
         "typescript"
     ],
     "author": "Rayhan Rahat",
-    "license": "ISC"
+    "license": "ISC",
+    "devDependencies": {
+        "lite-server": "^2.5.4",
+        "ts-loader": "^6.2.1",
+        "typescript": "^3.7.2",
+        "webpack": "^4.41.2",
+        "webpack-cli": "^3.3.10",
+        "webpack-dev-server": "^3.9.0"
+    }
 }
